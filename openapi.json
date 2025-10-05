@@ -1,0 +1,147 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "デフォルトモジュール",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/holidays": {
+      "get": {
+        "summary": "HolidaysAPI",
+        "deprecated": false,
+        "description": "その日が日本の祝日か確認するAPI",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "date",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "example": "2025-01-01",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "string",
+                      "title": "日時"
+                    },
+                    "is_holiday": {
+                      "type": "boolean",
+                      "title": "祝日であるか？"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "is_holiday"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "元旦",
+                    "value": {
+                      "date": "2025-01-01",
+                      "isHoliday": true,
+                      "name": "元旦"
+                    }
+                  },
+                  "2": {
+                    "summary": "祝日でなかった場合",
+                    "value": {
+                      "date": "2025-03-07",
+                      "isHolidays": false
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/is-business-day": {
+      "get": {
+        "summary": "isBusinessDay API",
+        "deprecated": false,
+        "description": "日本における、その日時が営業日か確認するAPI",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "day",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "example": "2025-01-02",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "string"
+                    },
+                    "is_business": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "is_business"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "営業日だった場合",
+                    "value": {
+                      "date": "2025-03-07",
+                      "is_business": true
+                    }
+                  },
+                  "2": {
+                    "summary": "営業日でなかった場合",
+                    "value": {
+                      "date": "2025-01-01",
+                      "is_business": false
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "securitySchemes": {}
+  },
+  "servers": [],
+  "security": []
+}
