@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Package\Aplications\Datas\Holidays;
+namespace App\Package\Applications\Datas\Holidays;
 
 interface HolidaysClientInterface
 {

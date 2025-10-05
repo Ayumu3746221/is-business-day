@@ -8,8 +8,8 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\ServiceProvider;
 use App\Package\Services\Holidays\HolidaysService;
 use App\Package\Services\Holidays\HolidaysServiceInterface;
-use App\Package\Aplications\Datas\Holidays\HolidaysClient;
-use App\Package\Aplications\Datas\Holidays\HolidaysClientInterface;
+use App\Package\Applications\Datas\Holidays\HolidaysClient;
+use App\Package\Applications\Datas\Holidays\HolidaysClientInterface;
 
 class AppServiceProvider extends ServiceProvider
 {

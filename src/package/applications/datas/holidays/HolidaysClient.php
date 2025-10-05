@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Package\Aplications\Datas\Holidays;
+namespace App\Package\Applications\Datas\Holidays;
 
-use App\Package\Aplications\Datas\Holidays\HolidaysClientInterface;
+use App\Package\Applications\Datas\Holidays\HolidaysClientInterface;
 use Illuminate\Support\Facades\File;
 
 class HolidaysClient implements HolidaysClientInterface
